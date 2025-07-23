@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تحدي الثلاثين - تسجيل الدخول</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="header">
+  <img src="https://uploads.onecompiler.io/43r6ub8mz/43r6u5fru/WhatsApp%20Image%202025-07-20%20at%2015.09.26_9c297a66.jpg" class="header-img" alt="شعار" />
+  <h1>تحدي الثلاثين - تسجيل الدخول</h1>
+</div>
+
+<main>
+  <h2>اختر دورك للدخول</h2>
+  <div class="role-selection">
+    <button id="btn-contestant">متسابق</button>
+    <button id="btn-admin">مسؤول</button>
+  </div>
+
+  <form id="contestant-form" style="display:none;">
+    <label for="cname">اسم المتسابق:</label>
+    <input type="text" id="cname" required placeholder="اكتب اسمك" class="big-input" />
+
+    <label for="cphone">رقم الهاتف:</label>
+    <input type="tel" id="cphone" required placeholder="اكتب رقم هاتفك" pattern="\d{10}" maxlength="10" inputmode="numeric" />
+
+    <label for="cstudentid">الرقم الجامعي:</label>
+    <input type="text" id="cstudentid" required placeholder="اكتب رقمك الجامعي" pattern="\d{10}" maxlength="10" inputmode="numeric" class="big-input" />
+
+    <input type="submit" value="تسجيل وبدء المسابقة" />
+  </form>
+
+  <form id="admin-form" style="display:none;">
+    <label for="admin-username">اسم المستخدم:</label>
+    <input type="text" id="admin-username" required placeholder="ادخل اسم المستخدم" class="big-input" />
+
+    <label for="admin-password">كلمة المرور:</label>
+    <input type="text" id="admin-password" required placeholder="ادخل كلمة المرور" class="big-input" />
+
+    <input type="submit" value="دخول المسؤول" />
+  </form>
+
+  <div id="message" class="alert" style="display:none;"></div>
+</main>
+
+<script>
+  const btnContestant = document.getElementById('btn-contestant');
+  const btnAdmin = document.getElementById('btn-admin');
+  const contestantForm = document.getElementById('contestant-form');
+  const adminForm = document.getElementById('admin-form');
+  const messageDiv = document.getElementById('message');
+
+  btnContestant.onclick = () => {
+    messageDiv.style.display = 'none';
+    adminForm.style.display = 'none';
+    contestantForm.style.display = 'block';
+  };
+
+  btnAdmin.onclick = () => {
+    messageDiv.style.display = 'none';
+    contestantForm.style.display = 'none';
+    adminForm.style.display = 'block';
+  };
+
+  contestantForm.onsubmit = (e) => {
+    e.preventDefault();
+    const name = document.getElementById('cname').value.trim();
+    const phone = document.getElementById('cphone').value.trim();
+    const studentId = document.getElementById('cstudentid').value.trim();
+
+    if (!name || !phone || !studentId) {
+      alert('يرجى تعبئة جميع الحقول');
+      return;
+    }
+
+    const entryTime = new Date().toLocaleString();
+    localStorage.setItem('currentContestant', JSON.stringify({ name, phone, universityId: studentId, time: entryTime }));
+    window.location.href = 'contestant.html';
+  };
+
+  adminForm.onsubmit = (e) => {
+    e.preventDefault();
+    const user = document.getElementById('admin-username').value.trim();
+    const pass = document.getElementById('admin-password').value.trim();
+
+    if (user === 'moath' && pass === '00000000') {
+      window.location.href = 'admin.html';
+    } else {
+      messageDiv.textContent = 'اسم المستخدم أو كلمة المرور خاطئة';
+      messageDiv.style.display = 'block';
+    }
+  };
+</script>
+
+</body>
+</html>

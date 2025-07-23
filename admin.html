@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة تحكم المسؤول</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <img src="https://uploads.onecompiler.io/43r6ub8mz/43r6u5fru/m1.jpg" class="header-img" alt="شعار" />
+    <h1>تحدي الثلاثين - المسؤول</h1>
+    <button onclick="window.location.href='index.html'" style="margin-top:10px; padding:8px 16px; background-color:#ff7700; color:#fff; border:none; border-radius:5px; cursor:pointer;">
+      العودة للصفحة الرئيسية
+    </button>
+  </div>
+
+  <div class="admin-container">
+    <h2>إضافة سؤال جديد</h2>
+    <input type="text" id="questionInput" placeholder="اكتب السؤال">
+    <input type="text" id="opt1" placeholder="الخيار الأول">
+    <input type="text" id="opt2" placeholder="الخيار الثاني">
+    <input type="text" id="opt3" placeholder="الخيار الثالث">
+    <input type="text" id="opt4" placeholder="الخيار الصحيح">
+    <button onclick="addQuestion()">إضافة</button>
+
+    <h2>قائمة الأسئلة الحالية</h2>
+    <ul id="questionsList"></ul>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
