@@ -1,7 +1,3 @@
-const questionInput = document.getElementById("questionInput");
-const opt1 = document.getElementById("opt1");
-const opt2 = document.getElementById("opt2");
-const opt3 = document.getElementById("opt3");
 const opt4 = document.getElementById("opt4");
 const questionsList = document.getElementById("questionsList");
 
@@ -11,13 +7,13 @@ function displayQuestions() {
   questionsList.innerHTML = "";
   questions.forEach((q, index) => {
     const li = document.createElement("li");
-    li.innerHTML = `
+    li.innerHTML = 
       <strong>${q.question}</strong><br>
       <ul>
-        ${q.options.map(opt => `<li>${opt}${opt === q.correct ? " ✅" : ""}</li>`).join("")}
+        ${q.options.map(opt => <li>${opt}${opt === q.correct ? " ✅" : ""}</li>).join("")}
       </ul>
       <button onclick="deleteQuestion(${index})">حذف</button>
-    `;
+    ;
     questionsList.appendChild(li);
   });
 }
