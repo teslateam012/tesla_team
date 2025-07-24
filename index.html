@@ -16,7 +16,7 @@
   <div class="role-selection">
     <button id="btn-contestant">متسابق</button>
     <button id="btn-admin">مسؤول</button>
-    <button onclick="openTable()">جدول المتسابقين</button>
+    <!-- <button onclick="openTable()">جدول المتسابقين</button> تم الحذف -->
   </div>
 
   <form id="contestant-form" style="display:none;">
@@ -93,14 +93,7 @@
     }
   };
 
-  function openTable() {
-    const password = prompt("أدخل كلمة السر لعرض جدول المتسابقين:");
-    if (password === "00000000") {
-      window.open("table.html", "_blank");
-    } else {
-      alert("كلمة السر غير صحيحة!");
-    }
-  }
+  // تم حذف openTable لأنها غير مطلوبة
 </script>
 
 </body>
