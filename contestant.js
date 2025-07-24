@@ -70,9 +70,32 @@ function showResult() {
     </div>
   `;
 
+  sendToGoogleSheet(score);
+
   setTimeout(() => {
     window.location.href = "index.html";
   }, 5000);
+}
+
+function sendToGoogleSheet(score) {
+  const contestant = JSON.parse(localStorage.getItem('currentContestant'));
+  const webAppURL = "https://script.google.com/macros/s/AKfycbwYGnJbbnZ0vFfHUoT3TIznHqPxkiCK2xH4t0KO0U64OkSbUX1wRybE7idyXQcx7VE/exec";
+
+  fetch(webAppURL, {
+    method: "POST",
+    body: JSON.stringify({
+      name: contestant.name,
+      phone: contestant.phone,
+      universityId: contestant.universityId,
+      score: score
+    }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(res => res.text())
+  .then(msg => console.log("تم الإرسال:", msg))
+  .catch(err => console.error("خطأ في الإرسال إلى Google Sheets", err));
 }
 
 function shuffleArray(array) {
