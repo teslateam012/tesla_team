@@ -79,23 +79,40 @@ function showResult() {
 
 function sendToGoogleSheet(score) {
   const contestant = JSON.parse(localStorage.getItem('currentContestant'));
+  
+  if (!contestant) {
+    console.error("❌ لم يتم العثور على بيانات المتسابق في localStorage");
+    return;
+  }
+
   const webAppURL = "https://script.google.com/macros/s/AKfycbwYGnJbbnZ0vFfHUoT3TIznHqPxkiCK2xH4t0KO0U64OkSbUX1wRybE7idyXQcx7VE/exec";
+
+  console.log("📤 جاري إرسال البيانات إلى Google Sheet...", {
+    name: contestant.name,
+    phone: contestant.phone,
+    universityId: contestant.universityId,
+    score: score
+  });
 
   fetch(webAppURL, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({
       name: contestant.name,
       phone: contestant.phone,
       universityId: contestant.universityId,
       score: score
-    }),
-    headers: {
-      "Content-Type": "application/json"
-    }
+    })
   })
   .then(res => res.text())
-  .then(msg => console.log("تم الإرسال:", msg))
-  .catch(err => console.error("خطأ في الإرسال إلى Google Sheets", err));
+  .then(txt => {
+    console.log("✅ تم الإرسال إلى Google Sheet:", txt);
+  })
+  .catch(err => {
+    console.error("❌ خطأ أثناء الإرسال إلى Google Sheet:", err);
+  });
 }
 
 function shuffleArray(array) {
