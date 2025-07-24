@@ -1,6 +1,4 @@
-import questions from './questions.js';
-
-let quizQuestions = shuffleArray(questions).slice(0, 10);
+let questions = shuffleArray(window.questions).slice(0, 10);
 
 let current = 0;
 let score = 0;
@@ -10,16 +8,17 @@ let countdown = 10;
 const warningSound = new Audio("https://www.soundjay.com/button/sounds/beep-07.mp3");
 
 function startQuestion() {
-  if (current >= quizQuestions.length) {
+  if (current >= questions.length) {
     showResult();
     return;
   }
 
-  const q = quizQuestions[current];
+  const q = questions[current];
   document.getElementById("questionBox").innerText = q.question;
 
   const optionsBox = document.getElementById("optionsBox");
   optionsBox.innerHTML = "";
+
   const shuffledOptions = shuffleArray([...q.answers]);
 
   shuffledOptions.forEach(opt => {
@@ -44,15 +43,9 @@ function startQuestion() {
     countdown--;
     timerEl.innerText = countdown;
 
-    if (countdown === 3) {
-      warningSound.play();
-    }
-
-    if (countdown <= 3) {
-      timerEl.style.color = "red";
-    } else {
-      timerEl.style.color = "#d35400";
-    }
+    if (countdown === 3) warningSound.play();
+    if (countdown <= 3) timerEl.style.color = "red";
+    else timerEl.style.color = "#d35400";
 
     if (countdown === 0) {
       clearInterval(timer);
@@ -61,7 +54,7 @@ function startQuestion() {
     }
   }, 1000);
 
-  document.getElementById("progress").innerText = `السؤال ${current + 1} من ${quizQuestions.length}`;
+  document.getElementById("progress").innerText = `السؤال ${current + 1} من ${questions.length}`;
 }
 
 function showResult() {
@@ -71,34 +64,11 @@ function showResult() {
   document.getElementById("progress").style.display = "none";
 
   const quizContainer = document.querySelector(".quiz-container");
-  quizContainer.innerHTML = `<div class="result-box" style="font-size: 24px; color: #ff7700; text-align: center; margin-top: 40px;">
-    انتهت الأسئلة! نتيجتك: ${score} من ${quizQuestions.length}
-  </div>`;
-
-  let contestantData = JSON.parse(localStorage.getItem('currentContestant'));
-  if (contestantData) {
-    contestantData.score = score;
-    contestantData.time = contestantData.time || new Date().toLocaleString();
-
-    let allParticipants = JSON.parse(localStorage.getItem('contestantResults')) || [];
-    const index = allParticipants.findIndex(p => p.name === contestantData.name && p.phone === contestantData.phone);
-    if (index !== -1) {
-      allParticipants[index] = contestantData;
-    } else {
-      allParticipants.push(contestantData);
-    }
-    localStorage.setItem('contestantResults', JSON.stringify(allParticipants));
-
-    fetch("https://script.google.com/macros/s/AKfycbyp4f65IwRjSRcD-1uYpO1ep0ihgEiJkrBGadyOMSYw215aoGPmhDnusFMEb05rqEmYDQ/exec", {
-      method: "POST",
-      body: JSON.stringify(contestantData),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .then(res => console.log("✅ تم الإرسال إلى Google Sheet"))
-    .catch(err => console.error("❌ فشل الإرسال إلى Google Sheet", err));
-  }
+  quizContainer.innerHTML = `
+    <div class="result-box" style="font-size: 24px; color: #ff7700; text-align: center; margin-top: 40px;">
+      انتهت الأسئلة! نتيجتك: ${score} من ${questions.length}
+    </div>
+  `;
 
   setTimeout(() => {
     window.location.href = "index.html";
