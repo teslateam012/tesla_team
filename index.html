@@ -1,100 +1,115 @@
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>تحدي الثلاثين - تسجيل الدخول</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>الرئيسية – AI Olive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
-<div class="header">
-  <img src="https://uploads.onecompiler.io/43r6ub8mz/43r6u5fru/WhatsApp%20Image%202025-07-20%20at%2015.09.26_9c297a66.jpg" class="header-img" alt="شعار" />
-  <h1>تحدي الثلاثين - تسجيل الدخول</h1>
-</div>
-
-<main>
-  <h2>اختر دورك للدخول</h2>
-  <div class="role-selection">
-    <button id="btn-contestant">متسابق</button>
-    <button id="btn-admin">مسؤول</button>
-    <!-- <button onclick="openTable()">جدول المتسابقين</button> تم الحذف -->
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="logo"></span> <span>AI Olive</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="ai-diagnosis.html">التشخيص بالذكاء الاصطناعي</a></li>
+        <li><a href="services.html">خدمات المزارعين</a></li>
+        <li><a href="mills.html">المعاصر</a></li>
+        <li><a href="consultation.html">الاستشارات</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+        <li><a href="pricing.html">الأسعار</a></li>
+        <li><a href="contact.html">تواصل</a></li>
+      </ul>
+      <a class="cta" href="ai-diagnosis.html">ابدأ الآن</a>
+    </nav>
   </div>
+</header>
 
-  <form id="contestant-form" style="display:none;">
-    <label for="cname">اسم المتسابق:</label>
-    <input type="text" id="cname" required placeholder="اكتب اسمك" class="big-input" />
+<section class="hero">
+  <div class="container">
+    <div class="kicker">الصفحة الرئيسية</div>
+    <h1>اكتشف أمراض أشجار الزيتون باستخدام الذكاء الاصطناعي</h1>
+    <p class="lead">ذكاء يقرأ صورة الورقة أو الثمرة بدقة، يحدّد نوع المرض، يقترح العلاج المناسب، ويربطك بالمختصين والخدمات الزراعية فورًا… بضغطة واحدة فقط.</p>
+    <a class="btn btn-primary" href="ai-diagnosis.html">ابدأ الآن</a>
+  </div>
+</section>
 
-    <label for="cphone">رقم الهاتف:</label>
-    <input type="tel" id="cphone" required placeholder="اكتب رقم هاتفك" pattern="\d{10}" maxlength="10" inputmode="numeric" />
+<section class="section">
+  <div class="container grid grid-3">
+    <div class="card">
+      <h3>تشخيص مع الذكاء الاصطناعي</h3>
+      <p>ارفع صورة الورقة أو الثمرة، وسيقوم النظام بتحليلها وتحديد المرض ونسبة الدقة ودرجة الخطورة مع توصيات علاج دقيقة.</p>
+    </div>
+    <div class="card">
+      <h3>خدمات المزارعين</h3>
+      <p>تقليم – حراثة – تعشيب – نقل معدات – ري – قطاف — مع إمكانية الحجز وتحديد الموقع الجغرافي للمزرعة.</p>
+    </div>
+    <div class="card">
+      <h3>استشارات زراعية</h3>
+      <p>تواصل مباشر مع مهندسين زراعيين — أونلاين أو زيارة ميدانية — للحصول على حلول دقيقة لحالتك.</p>
+    </div>
+    <div class="card">
+      <h3>منتجات المبيدات والأسمدة</h3>
+      <p>عرض منتجات موثوقة لعلاج الأمراض — أسمدة ومبيدات معتمدة من محلات داخل المنصة.</p>
+    </div>
+  </div>
+</section>
 
-    <label for="cstudentid">الرقم الجامعي:</label>
-    <input type="text" id="cstudentid" required placeholder="اكتب رقمك الجامعي" pattern="\d{10}" maxlength="10" inputmode="numeric" class="big-input" />
+<section class="section">
+  <div class="container grid grid-2">
+    <div class="card">
+      <h3>عن المنصة</h3>
+      <p>منصة AI Olive تسهّل على المزارعين تشخيص أمراض الزيتون وربط التشخيص بالخدمات الزراعية، الاستشارات، ومحلات المبيدات، في مكان واحد، لتصبح عملية العناية بشجر الزيتون أكثر دقة، وأقل اجتهادًا عشوائيًا، وأكثر ارتباطًا بالبيانات الحقيقية.</p>
+    </div>
+    <div class="card">
+      <h3>لماذا AI Olive؟</h3>
+      <ul class="clean">
+        <li>تشخيص AI فوري</li>
+        <li>دقة عالية مدعومة ببيانات صور حقيقية</li>
+        <li>ربط النتيجة بالخدمة والعلاج</li>
+        <li>دعم عملي للمزارعين في المواسم</li>
+        <li>حلول قابلة للتطبيق فورًا</li>
+      </ul>
+      <a class="btn btn-primary" href="ai-diagnosis.html">ابدأ التشخيص الآن</a>
+    </div>
+  </div>
+</section>
 
-    <input type="submit" value="تسجيل وبدء المسابقة" />
-  </form>
-
-  <form id="admin-form" style="display:none;">
-    <label for="admin-username">اسم المستخدم:</label>
-    <input type="text" id="admin-username" required placeholder="ادخل اسم المستخدم" class="big-input" />
-    
-    <label for="admin-password">كلمة المرور:</label>
-    <input type="text" id="admin-password" required placeholder="ادخل كلمة المرور" class="big-input" />
-
-    <input type="submit" value="دخول المسؤول" />
-  </form>
-
-  <div id="message" class="alert" style="display:none;"></div>
-</main>
-
-<script>
-  const btnContestant = document.getElementById('btn-contestant');
-  const btnAdmin = document.getElementById('btn-admin');
-  const contestantForm = document.getElementById('contestant-form');
-  const adminForm = document.getElementById('admin-form');
-  const messageDiv = document.getElementById('message');
-
-  btnContestant.onclick = () => {
-    messageDiv.style.display = 'none';
-    adminForm.style.display = 'none';
-    contestantForm.style.display = 'block';
-  };
-
-  btnAdmin.onclick = () => {
-    messageDiv.style.display = 'none';
-    contestantForm.style.display = 'none';
-    adminForm.style.display = 'block';
-  };
-
-  contestantForm.onsubmit = (e) => {
-    e.preventDefault();
-    const name = document.getElementById('cname').value.trim();
-    const phone = document.getElementById('cphone').value.trim();
-    const studentId = document.getElementById('cstudentid').value.trim();
-
-    if (!name || !phone || !studentId) {
-      alert('يرجى تعبئة جميع الحقول');
-      return;
-    }
-
-    const entryTime = new Date().toLocaleString();
-    localStorage.setItem('currentContestant', JSON.stringify({ name, phone, universityId: studentId, time: entryTime }));
-    window.location.href = 'contestant.html';
-  };
-
-  adminForm.onsubmit = (e) => {
-    e.preventDefault();
-    const user = document.getElementById('admin-username').value.trim();
-    const pass = document.getElementById('admin-password').value.trim();
-
-    if (user === 'moath' && pass === '00000000') {
-      window.location.href = 'admin.html';
-    } else {
-      messageDiv.textContent = 'اسم المستخدم أو كلمة المرور خاطئة';
-      messageDiv.style.display = 'block';
-    }
-  };
-
-  // تم حذف openTable لأنها غير مطلوبة
-</script>
-
-</body>
-</html>
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="logo"></span><span>AI Olive</span></div>
+      <p>منصة لتشخيص أمراض الزيتون وربط التشخيص بالخدمات الزراعية والمنتجات والخبراء.</p>
+      <div>
+        <a class="tag" href="privacy.html">سياسة الخصوصية</a>
+        <a class="tag" href="terms.html">الشروط والأحكام</a>
+        <a class="tag" href="admin-dashboard.html">لوحة التحكم</a>
+      </div>
+    </div>
+    <div>
+      <h4>روابط سريعة</h4>
+      <ul class="clean">
+        <li><a href="ai-diagnosis.html">التشخيص</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="mills.html">المعاصر</a></li>
+        <li><a href="consultation.html">الاستشارات</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>تواصل</h4>
+      <ul class="clean">
+        <li>واتساب، فيسبوك، إنستغرام</li>
+        <li>البريد: support@aiolive.local</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container" style="padding-top:8px;padding-bottom:14px;color:#9bb9aa;">© 2025 AI Olive</div>
+</footer>
+<script src="assets/js/app.js"></script>
+</body></html>
