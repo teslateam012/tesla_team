@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>المنتجات – AI Olive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="logo"></span> <span>AI Olive</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="ai-diagnosis.html">التشخيص بالذكاء الاصطناعي</a></li>
+        <li><a href="services.html">خدمات المزارعين</a></li>
+        <li><a href="mills.html">المعاصر</a></li>
+        <li><a href="consultation.html">الاستشارات</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+        <li><a href="pricing.html">الأسعار</a></li>
+        <li><a href="contact.html">تواصل</a></li>
+      </ul>
+      <a class="cta" href="ai-diagnosis.html">ابدأ الآن</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2>منتجات المبيدات والأسمدة</h2>
+    <div class="grid grid-3">
+      <div class="card product">
+        <img src="assets/img/p1.png" alt="product">
+        <div>
+          <h3>مبيد فطري (مانكوزيب 80%)</h3>
+          <div class="tag">لعين الطاووس</div>
+          <div class="tag">22.00 د.أ</div>
+          <p>اتّبع تعليمات الرش والجرعات الموصى بها.</p>
+          <button class="btn btn-primary" data-open="buy-modal">اطلب الآن</button>
+        </div>
+      </div>
+      <div class="card product">
+        <img src="assets/img/p2.png" alt="product">
+        <div>
+          <h3>سماد ورقي عالي البوتاسيوم</h3>
+          <div class="tag">تعزيز العقد</div><div class="tag">18.50 د.أ</div>
+          <p>يرش مساءً لتحقيق امتصاص أفضل.</p>
+          <button class="btn btn-primary" data-open="buy-modal">اطلب الآن</button>
+        </div>
+      </div>
+      <div class="card product">
+        <img src="assets/img/p3.png" alt="product">
+        <div>
+          <h3>أكاريسيد</h3>
+          <div class="tag">العث الكيسي</div><div class="tag">19.00 د.أ</div>
+          <p>فعال خلال بداية الربيع والخريف.</p>
+          <button class="btn btn-primary" data-open="buy-modal">اطلب الآن</button>
+        </div>
+      </div>
+    </div>
+    <div id="related" class="notice" style="margin-top:16px">اقتراحات مرتبطة بالتشخيص ستظهر هنا عند الربط مع نموذج الذكاء.</div>
+  </div>
+</section>
+
+<div id="buy-modal" class="modal">
+  <h3>طلب منتج</h3>
+  <div class="form-row">
+    <div><label>الاسم</label><input></div>
+    <div><label>رقم الهاتف</label><input></div>
+  </div>
+  <label>العنوان</label><input placeholder="المنطقة / الحي">
+  <label>تحديد موقع التسليم</label><input placeholder="رابط خريطة أو الإحداثيات">
+  <div style="display:flex;gap:10px;margin-top:10px">
+    <button class="btn btn-primary" data-close>إرسال الطلب</button>
+    <button class="btn" data-close>إلغاء</button>
+  </div>
+</div>
+<div class="modal-backdrop"></div>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="logo"></span><span>AI Olive</span></div>
+      <p>منصة لتشخيص أمراض الزيتون وربط التشخيص بالخدمات الزراعية والمنتجات والخبراء.</p>
+      <div>
+        <a class="tag" href="privacy.html">سياسة الخصوصية</a>
+        <a class="tag" href="terms.html">الشروط والأحكام</a>
+        <a class="tag" href="admin-dashboard.html">لوحة التحكم</a>
+      </div>
+    </div>
+    <div>
+      <h4>روابط سريعة</h4>
+      <ul class="clean">
+        <li><a href="ai-diagnosis.html">التشخيص</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="mills.html">المعاصر</a></li>
+        <li><a href="consultation.html">الاستشارات</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>تواصل</h4>
+      <ul class="clean">
+        <li>واتساب، فيسبوك، إنستغرام</li>
+        <li>البريد: support@aiolive.local</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container" style="padding-top:8px;padding-bottom:14px;color:#9bb9aa;">© 2025 AI Olive</div>
+</footer>
+<script src="assets/js/app.js"></script>
+</body></html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>التشخيص بالذكاء الاصطناعي – AI Olive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="logo"></span> <span>AI Olive</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="ai-diagnosis.html">التشخيص بالذكاء الاصطناعي</a></li>
+        <li><a href="services.html">خدمات المزارعين</a></li>
+        <li><a href="mills.html">المعاصر</a></li>
+        <li><a href="consultation.html">الاستشارات</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+        <li><a href="pricing.html">الأسعار</a></li>
+        <li><a href="contact.html">تواصل</a></li>
+      </ul>
+      <a class="cta" href="ai-diagnosis.html">ابدأ الآن</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="kicker">التشخيص بالذكاء الاصطناعي</div>
+    <h2>حمّل صورة ورقة الزيتون أو الثمرة المصابة</h2>
+    <form id="diag-form" class="card" enctype="multipart/form-data">
+      <label>اختر صورة من جهازك</label>
+      <input type="file" accept="image/*" name="image" required />
+      <div class="grid grid-2" style="margin-top:12px">
+        <div>
+          <div class="badge">الصورة الأصلية</div>
+          <img id="preview" alt="preview" style="width:100%;border-radius:12px;border:1px solid #1e3e2d"/>
+        </div>
+        <div>
+          <div class="badge">صورة المعالجة (Region Detection)</div>
+          <img id="processed" alt="processed" style="width:100%;border-radius:12px;border:1px solid #1e3e2d"/>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:12px">
+        <button class="btn btn-primary" type="submit">حلّل الصورة</button>
+        <a class="btn btn-ghost" href="#stats">عرض الإحصائيات</a>
+      </div>
+    </form>
+
+    <div id="result" style="margin-top:18px"></div>
+    <div id="recs" style="margin-top:12px"></div>
+
+    <div class="notice" style="margin-top:18px">
+      هل تحتاج مراجعة مهندس زراعي؟ <a class="btn" style="margin-inline-start:10px" href="consultation.html">احجز استشارة الآن</a>
+    </div>
+
+    <div id="stats" class="grid grid-3" style="margin-top:18px">
+      <div class="stat"><div>الأمراض الأكثر رصدًا هذا الأسبوع</div><strong>عين الطاووس، العث</strong></div>
+      <div class="stat"><div>عدد الصور المحللة</div><strong>+1,250</strong></div>
+      <div class="stat"><div>متوسط نسبة الدقة</div><strong>90–95%</strong></div>
+    </div>
+  </div>
+</section>
+<script src="assets/js/diagnosis.js"></script>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="logo"></span><span>AI Olive</span></div>
+      <p>منصة لتشخيص أمراض الزيتون وربط التشخيص بالخدمات الزراعية والمنتجات والخبراء.</p>
+      <div>
+        <a class="tag" href="privacy.html">سياسة الخصوصية</a>
+        <a class="tag" href="terms.html">الشروط والأحكام</a>
+        <a class="tag" href="admin-dashboard.html">لوحة التحكم</a>
+      </div>
+    </div>
+    <div>
+      <h4>روابط سريعة</h4>
+      <ul class="clean">
+        <li><a href="ai-diagnosis.html">التشخيص</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="mills.html">المعاصر</a></li>
+        <li><a href="consultation.html">الاستشارات</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>تواصل</h4>
+      <ul class="clean">
+        <li>واتساب، فيسبوك، إنستغرام</li>
+        <li>البريد: support@aiolive.local</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container" style="padding-top:8px;padding-bottom:14px;color:#9bb9aa;">© 2025 AI Olive</div>
+</footer>
+<script src="assets/js/app.js"></script>
+</body></html>
